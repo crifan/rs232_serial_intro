@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<bibliography
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+
+    xml:id="reference">
+
+<bibliomixed xml:id="ref.beckhoff_cx9000_n030">
+  <bibliosource><link xl:href="http://www.beckhoff.com/english.asp?embedded_pc/cx9000_n010_cx9010_n010_cx9000_n030_cx9010_n030_cx9000_n031_cx9010_n031.htm">BECKHOFF CX90x0-A001/N0xx | System interfaces</link></bibliosource>
+  <author>BeckHoff</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.bluetooth_cr_ch10">
+  <bibliosource><link xl:href="http://authors.phptr.com/bluetooth/bray/pdf/cr_ch10.pdf">Bluetooth Cr Ch10</link></bibliosource>
+  <author>phptr</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.wiki_rs232">
+  <bibliosource><link xl:href="http://en.wikipedia.org/wiki/RS-232">RS-232 - Wikipedia, the free encyclopedia</link></bibliosource>
+  <author>wikipedia</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.serial_uart_tutorial">
+  <bibliosource><link xl:href="https://www.freebsd.org/doc/en/articles/serial-uart/">Serial and UART Tutorial</link></bibliosource>
+  <author>Frank Durda</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_vs_uart_diff">
+  <bibliosource><link xl:href="http://www.edaboard.com/thread258407.html">[SOLVED] RS232 Vs UART differences</link></bibliosource>
+  <author>edaboard</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.diff_between_rs232_and_uart">
+  <bibliosource><link xl:href="http://www.keil.com/forum/1457/">What is the difference between RS232 and UART?</link></bibliosource>
+  <author>keil</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.faro_elektronik">
+  <bibliosource><link xl:href="http://www.faro.at/Elektronik.htm">Elektronik</link></bibliosource>
+  <author>faro</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.what_is_diff_dtr_dsr_and_rts_cts">
+  <bibliosource><link xl:href="http://stackoverflow.com/questions/957337/what-is-the-difference-between-dtr-dsr-and-rts-cts-flow-control">What is the difference between DTR/DSR and RTS/CTS flow control?</link></bibliosource>
+  <author>stackoverflow</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.flow_control_rts_cts">
+  <bibliosource><link xl:href="http://www.pccompci.com/Flow_Control.html#RTS/CTS">RTS/CTS</link></bibliosource>
+  <author>pccompci</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_serial_null_modem">
+  <bibliosource><link xl:href="http://www.lammertbies.nl/comm/info/RS-232_null_modem.html#full">RS232 serial null modem cable wiring</link></bibliosource>
+  <author>lammertbies</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_spec_and_standard">
+  <bibliosource><link xl:href="http://www.lammertbies.nl/comm/info/RS-232_specs.html">RS232 Specifications and standard</link></bibliosource>
+  <author>lammertbies</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_flow_control_handshaking">
+  <bibliosource><link xl:href="http://www.lammertbies.nl/comm/info/RS-232_flow_control.html">RS232 flow control and handshaking</link></bibliosource>
+  <author>lammertbies</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs485_spec_depth_tutorial">
+  <bibliosource><link xl:href="http://www.lammertbies.nl/comm/info/RS-485.html">RS485, specifications and in depth tutorial</link></bibliosource>
+  <author>lammertbies</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_serial_comm_connection">
+  <bibliosource><link xl:href="http://blog.csdn.net/jianshe999/article/details/2051952">RS232串口通信基本接线方法</link></bibliosource>
+  <author>jianshe999</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_connection">
+  <bibliosource><link xl:href="http://wenku.baidu.com/view/1acf544efe4733687e21aad7">RS-232接线</link></bibliosource>
+  <author>baidu</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_data_interface">
+  <bibliosource><link xl:href="http://www.arcelect.com/rs232.htm">RS232 Data Interface</link></bibliosource>
+  <author>arcelect</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.serial_comm_intro">
+  <bibliosource><link xl:href="http://www.taltech.com/datacollection/articles/serial_intro">Introduction to Serial Communications</link></bibliosource>
+  <author>taltech</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.the_rs232_standard">
+  <bibliosource><link xl:href="http://www.camiresearch.com/Data_Com_Basics/RS232_standard.html">The RS232 STANDARD</link></bibliosource>
+  <author>camiresearch</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.user_guide_book_5x80_5x00">
+  <bibliosource><link xl:href="http://www.honeywellaidc.com/CatalogDocuments/5X80,5X00%20documents/5X80%20User’s%20Guide.pdf">5X10-80-UG Rev A.book</link></bibliosource>
+  <author>honeywellaidc</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.serial_uart_controller_rs232">
+  <bibliosource><link xl:href="http://stackoverflow.com/questions/18459505/uart-controller-or-rs232-controller-is-uart-a-general-word">serial port - UART controller or RS232 controller? Is UART a general word? - Stack Overflow</link></bibliosource>
+  <author>stackoverflow</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.uart_rs232_usb_spi_i2c_ttl">
+  <bibliosource><link xl:href="http://electronics.stackexchange.com/questions/37814/usart-uart-rs232-usb-spi-i2c-ttl-etc-what-are-all-of-these-and-how-do-th">communication - USART, UART, RS232, USB, SPI, I2C, TTL, etc. what are all of these and how do they relate to each other? - Electrical Engineering Stack Exchange</link></bibliosource>
+  <author>stackexchange</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.diff_between_uart_and_rs232">
+  <bibliosource><link xl:href="http://electronics.stackexchange.com/questions/110478/difference-between-uart-and-rs232">serial - Difference between UART and RS232?</link></bibliosource>
+  <author>stackexchange</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_pins_function">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_rs232_pins_name_location_function/">【整理】RS232的引脚的名称及位置和功能含义 | 在路上</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.pcduino_ttl_serial">
+  <bibliosource><link xl:href="http://www.crifan.com/continue_try_access_pcduino_via_ttl_serial_port">【记录】继续尝试通过TTL串口去访问pcDuino</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs485_pin_function_explain">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_rs485_pin_function_and_how_connect/">【整理】RS485针脚pin脚功能说明以及常见pin脚解法的解释</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.serial_rs232_re485_rts_cts_meaning">
+  <bibliosource><link xl:href="http://www.crifan.com/explain_uart_serial_rs232_rs485_hardware_flow_control_handshaking_rts_cts_dtr_dsr/">【整理】串口(RS232/RS485等)通讯中RTS/CTS,DTR/DSR的含义详解 | 在路上</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed xml:id="ref.rs232_rts_cts_flow_control_procedure">
+  <bibliosource><link xl:href="http://www.crifan.com/order_rs232_rts__cts_flow_control_of_the_specific_process__mechanism/">【整理】RS232 RTS/CTS的流控制的具体过程/机制 | 在路上</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+</bibliography>

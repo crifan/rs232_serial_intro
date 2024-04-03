@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+	
+	xml:id="ch03_dev">
+<title>RS232的开发方面的知识</title>
+<abstract></abstract>
+
+<para>TODO：</para>
+<para><link xl:href="http://www.crifan.com/restore_tq2440_board_hardware_rs232_connection/">【记录】恢复win7与ARM开发板TQ2440的串口连接</link></para>
+
+<sect1 xml:id="wind_soft_implement"><title>Windows中串口软件实现</title>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="android_rs232_driver"><title>开发Android的RS232串口驱动</title>
+	<para>TODO：</para>
+	<para><link xl:href="http://www.crifan.com/usb_to_serial_rs232_handshaking/">【记录】去确定USB转串口中的握手协议handshaking方面的支持</link></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>

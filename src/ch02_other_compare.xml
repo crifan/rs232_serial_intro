@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+
+    xml:id="ch02_other_compare">
+<title>RS232和其他接口协议的对比</title>
+<abstract></abstract>
+
+<para>此处介绍，和RS232类似的，常被那来作对比的一些协议和接口，详细解释他们之间的区别和联系：</para>
+<para></para>
+
+<sect1 xml:id="rs232_vs_rs485"><title>RS232和RS485之间的对比</title>
+    <para>RS232：只能一对一的连接</para>
+    <para>RS485：支持一对多的连接，即一拖多</para>
+    <para></para>
+    <para></para>
+    <para>RS232：各种领域，包括普通消费类，工业控制类等等都有广泛应用</para>
+    <para>RS485：相对来说更多的是应用于工业控制领域内</para>
+</sect1>
+
+<sect1 xml:id="rs232_vs_uart"><title>RS232和UART之间的对比</title>
+    <para>其实RS232和UART不是一个东西，是有区别的。下面就来解释RS232和UART的关系。</para>
+    <para>只不过在多数情况下，都把UART和RS232混在一起说，此时都是指的是串口的意思</para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para>UART==Universal Asynchronous Receiver Transmitter</para>
+    <para>UART，通用，指的是：其可以配置而支持多种不同协议</para>
+    <para>即，UART的输出是很多bit，这些bit最终可以组成RS232、RS422、RS485等其他协议。</para>
+    <para></para>
+    <para></para>
+    <para>The UART (universal asynchronous receiver transmitter) is the heart of the serial hardware. It is a chip or part of a chip with the purpose to convert between parallel data and serial data. RS-232 UARTs also typically add the necessary start/stop and parity bits when transmitting, and decode this information when receiving.</para>
+    <para>A UART typically operates entirely on computer logic voltage. Its serial data input/output voltage is the computer logic voltage, not the serial line voltage. They leave the actual line interface to a particular line driver / receiver. This line driver / receiver does not necessarily need to be an RS-232 line driver / receiver, but could e.g. also be an RS-422 differential driver / receiver. This, and the fact that baud rate, parity, number of stop bits, number of data bits are programmable is the reason why UARTs are called universal. The distinction between UART and line driver / receiver blurs if they are both placed in the same chip. Such chips are typically also sold under the label 'UART'.
+UARTs are called asynchronous, because they don't use a special clock signal to synchronize with the the remote side. Instead, they use the start/stop bits to identify the data bits in the serial stream.
+Thanks to the UART the rest of the hardware, as well as the software application can deal with normal bytes to hold the communication data. It is the job of the UART to chop a byte into a series of serial bits when sending, and to assemble series of bits into a byte when receiving. UARTs typically contain eight bit wide receiver and transmission buffers. Of which not all bits might be used if e.g. a 7 bit transmission is used. Received serial data is provided in parallel in the receiver buffer, to-be-send data is written in parallel to the transmission buffer. Depending on the UART the buffers might just have a depth of one byte, or a few bytes (in the range of 15 or 16 bytes). The less deep the buffers are, the more precise the communication with the CPU needs to be. E.g. if the receiver buffer just has a depth of one byte, and the data is not fetched fast enough, the next received data can overwrite the previously received data in the buffer, and the previously received data is lost.</para>
+    <para>Because of the fact that the timing on the serial interface is important, UARTs are typically connected to a baud rate generator, either an internal one in the UART chip, or an external one.</para>
+    <para></para>
+    <para></para>
+    <para>UART的作用：</para>
+    <para>为了CPU更省事，省力：</para>
+    <para>不需要每次把一堆的字节，慢慢的转化为一个个bit，然后一点点塞到（设置到）传输通道中，发送到对方</para>
+    <para>而只需要：</para>
+    <para>把要发的数据字节流放到一个缓存buffer中，然后告诉UART有数据了，接着UART负责把每个字节转换为单个的8个bit，一点点去发送</para>
+    <para>简单说就是：</para>
+    <para>UART是把串行的字节数据，转换为并行的比特位，然后再传输过去</para>
+    <para></para>
+    <para>总结起来就是：</para>
+    <table xml:id="tbl.rs232_vs_uart"><title>Serial、RS232、UART的对比</title>
+        <tgroup cols="5">
+            <colspec colnum="1" colname="col1" colwidth="1*"/>
+            <colspec colnum="2" colname="col2" colwidth="1*"/>
+            <colspec colnum="3" colname="col3" colwidth="1*"/>
+            <colspec colnum="4" colname="col4" colwidth="1*"/>
+            <colspec colnum="5" colname="col5" colwidth="1*"/>
+
+            <thead>
+                <row><entry>要对比的项</entry><entry>所属类型</entry><entry>数据位个数</entry><entry>主要作用和功能</entry><entry>备注</entry></row>
+            </thead>
+
+            <tbody>
+                <row><entry>Serial</entry><entry>软件概念</entry><entry></entry><entry>串行，概念上属于“时分复用”，数据是随着时间不同，慢慢的传送过去的，且大多数是以一个一个bit位的形式发送的。USART, UART, RS232, USB, SPI, I2C, TTL等等，都属于串行方面的协议或概念。</entry><entry></entry></row>
+                <row><entry>UART</entry><entry>硬件设备，电子电路，物理上的模块</entry><entry>1</entry><entry>最常用的一种串行协议。处理串行接口之间的通信，只不过此串行接口，往往都是RS232接口而已。</entry><entry>由于每传输一个字节，都要通过自己的起始位的下降沿起去同步，因此才叫做异步通信。</entry></row>
+                <row><entry>RS232</entry><entry>电气接口规范</entry><entry>2</entry><entry>串口通信的协议，定义了，DCE和DTE之间的，电气方面的特性：硬件接口即引脚和其功能，信号时序和含义等</entry><entry>更严格的说法应该把RS232叫做EIA-232；对于远距离通信，5V不可靠，所以才会加大电压采用12V，即+12V表示0，-12V表示1</entry></row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para>RS232和UART，以及对应的Line Driver/Receiver，CPU等等模块之间的数据流关系，可用下图表示：</para>
+    <figure xml:id="fg.rs232_uart_data_flow"><title>RS232和UART之前的数据流关系</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/rs232_uart_data_flow.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/rs232_uart_data_flow.png" align="center" scalefit="1" width="100%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_vs_ttl"><title>RS232和TTL的对比</title>
+	<para>TODO：整理帖子内容</para>
+	<para><link xl:href="http://www.crifan.com/summary_ttl_vs_rs232/">【整理】TTL和RS232之间的详细对比</link></para>
+    <para>TTL (Transistor Transistor Logic) is not a protocol. It's an older technology for digital logic, but the name is often used to refer to the 5 V supply voltage, often incorrectly referring to what should be called UART.</para>
+    <para></para>
+    <para></para>
+    <para>TTL mean Transistor-Transistor-Logic and has its level for logical zero near 0V and for logical one near 5V. Often any 5V logic is called TTL, although most circuits nowadays are built as CMOS. Today there are also many circuits that work at 3.3V, which is no longer TTL.</para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_vs_rs485_rs422"><title>RS232和RS485、RS422之间的对比</title>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <table xml:id="tbl.rs232_rs422_rs423_rs485"><title>RS232,RS422,RS423,RS485之间的对比</title>
+        <tgroup cols="5">
+            <colspec colnum="1" colname="col1" colwidth="1*"/>
+            <colspec colnum="2" colname="col2" colwidth="1*"/>
+            <colspec colnum="3" colname="col3" colwidth="1*"/>
+            <colspec colnum="4" colname="col4" colwidth="1*"/>
+            <colspec colnum="5" colname="col5" colwidth="1*"/>
+
+            <thead>
+                <row><entry></entry><entry>RS232</entry><entry>RS422</entry><entry>RS423</entry><entry>RS485</entry></row>
+            </thead>
+
+            <tbody>
+                <row><entry>Differential</entry><entry>no</entry><entry>yes</entry><entry>no</entry><entry>yes</entry></row>
+                <row><entry>Max number of drivers</entry><entry>1</entry><entry>1</entry><entry>1</entry><entry>32</entry></row>
+                <row><entry>Max number of receivers</entry><entry>1</entry><entry>10</entry><entry>10</entry><entry>32</entry></row>
+                <row><entry>Modes of operation</entry><entry>half duplex, full duplex</entry><entry>half duplex</entry><entry>half duplex</entry><entry>half duplex</entry></row>
+                <row><entry>Network topology</entry><entry>point-to-point</entry><entry>multidrop</entry><entry>multidrop</entry><entry>multidrop</entry></row>
+                <row><entry>Max distance (acc. standard)</entry><entry>15 m</entry><entry>1200 m</entry><entry>1200 m</entry><entry>1200 m</entry></row>
+                <row><entry>Max speed at 12 m</entry><entry>20 kbs</entry><entry>10 Mbs</entry><entry>100 kbs</entry><entry>35 Mbs</entry></row>
+                <row><entry>Max speed at 1200 m</entry><entry>(1 kbs)</entry><entry>100 kbs</entry><entry>1 kbs</entry><entry>100 kbs</entry></row>
+                <row><entry>Max slew rate</entry><entry>30 V/μs</entry><entry>n/a</entry><entry>adjustable</entry><entry>n/a</entry></row>
+                <row><entry>Receiver input resistance</entry><entry>3~7 kΩ</entry><entry>≧ 4 kΩ</entry><entry>≧ 4 kΩ</entry><entry>≧ 12 kΩ</entry></row>
+                <row><entry>Driver load impedance</entry><entry>3~7 kΩ</entry><entry>100 Ω</entry><entry>≧ 450 Ω</entry><entry>54 Ω</entry></row>
+                <row><entry>Receiver input sensitivity</entry><entry>±3 V</entry><entry>±200 mV</entry><entry>±200 mV</entry><entry>±200 mV</entry></row>
+                <row><entry>Receiver input range</entry><entry>±15 V</entry><entry>±10 V</entry><entry>±12 V</entry><entry>–7~12 V</entry></row>
+                <row><entry>Max driver output voltage</entry><entry>±25 V</entry><entry>±6 V</entry><entry>±6 V</entry><entry>–7~12 V</entry></row>
+                <row><entry>Min driver output voltage (with load)</entry><entry>±5 V</entry><entry>±2.0 V</entry><entry>±3.6 V</entry><entry>±1.5 V</entry></row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_vs_spi_i2c"><title>RS232和SPI、I2C的对比</title>
+	<para>嵌入式领域，尤其是其中的消费类数码领域的嵌入式开发，往往都会将这几种常见的接口，放在一起讨论。</para>
+    <para>所以，此处也在简单对比分析一下，RS232和SPI，I2C等接口的区别。</para>
+    <para></para>
+    <para>SPI (Serial Peripheral Interface) is another very simple serial protocol. A master sends a clock signal, and upon each clock pulse it shifts one bit out to the slave, and one bit in, coming from the slave. Signal names are therefore SCK for clock, MOSI for Master Out Slave In, and MISO for Master In Slave Out. By using SS (Slave Select) signals the master can control more than 1 slave on the bus. There are two ways to connect multiple slave devices to one master, one is mentioned above i.e. using slave select, and other is daisy chaining, it uses less hardware pins(select lines), but software gets complicated.</para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para>I2C (Inter-Integrated Circuit, pronounced "I squared C") is also a synchronous protocol, and it's the first we see which has some "intelligence" in it; the other ones dumbly shifted bits in and out, and that was that. I2C uses only 2 wires, one for the clock (SCL) and one for the data (SDA). That means that master and slave send data over the same wire, again controlled by the master who creates the clock signal. I2C doesn't use separate Slave Selects to select a particular device, but has addressing. The first byte sent by the master holds a 7 bit address (so that you can use 127 devices on the bus) and a read/write bit, indicating whether the next byte(s) will also come from the master of should come from the slave. After each byte receiver must send a "0" to acknowledge the reception of the byte, which the master latches with a 9th clock pulse. If the master wants to write a byte the same process repeats: the master puts bit after bit on the bus and each time gives a clock pulse to signal that the data is ready to be read. If the master wants to receive data it only generates the clock pulses. The slave has to take care that the next bit is ready when the clock pulse is given. This protocol is patented by NXP(formerly Phillips), to save licensing cost, Atmel using the word TWI(2-wire interface) which exactly same as I2C, so any AVR device will not have I2C but it will have TWI.
+Two or more signals on the same wire may cause conflicts, and you would have a problem if one device sends a "1" while the other sends a "0". Therefore the bus is wired-OR'd: two resistors pull the bus to a high level, and the devices only send low levels. If they want to send a high level they simply release the bus.</para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>

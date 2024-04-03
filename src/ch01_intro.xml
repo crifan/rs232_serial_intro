@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+
+    xml:id="ch01_intro">
+<title>RS232协议基本内容介绍</title>
+<abstract></abstract>
+
+<para>TODO：整理帖子内容</para>
+<para><link xl:href="http://www.crifan.com/summary_embedded_peripherals_rs232">【整理】嵌入式外设之RS232</link></para>
+<para><link xl:href="http://www.camiresearch.com/Data_Com_Basics/RS232_standard.html#anchor1155404" /></para>
+
+<sect1 xml:id="what_is_rs232"><title>RS232是什么</title>
+    <para>RS232，就是我们常说的，串口。</para>
+    <para>也常被叫做，UART。</para>
+    <para>最早的是25针的，后来有了简化版的9针的。目前最常用的就是9针的。</para>
+    <para>最早采用RS232协议的产品是调制解调器Modem和电传打字机。</para>
+</sect1>
+
+<sect1 xml:id="rs232_interface_type"><title>RS232引脚接口的种类</title>
+    <para></para>
+    <para>RS232接口，按照引脚个数分可以分为：</para>
+    <itemizedlist>
+        <listitem>9针=9 pins
+            <para>主流最常用的就是这个9针的RS232</para>
+        </listitem>
+        <listitem>25针=25 pins
+            <para>目前很少用，此处不多介绍</para>
+        </listitem>
+    </itemizedlist>
+    <para>其中的（9针的）RS232按照接口类型分，又可分为：</para>
+    <itemizedlist>
+        <listitem>公口（Male）：带针脚，可以插入到另外别的一端
+            <para></para>
+            <figure xml:id="fg.rs232_9_pins_connector_male"><title>公口的9针的RS232接口</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/rs232_9_pins_connector_male.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/rs232_9_pins_connector_male.jpg" align="center" scalefit="1" width="80%" /></imageobject>
+                </mediaobject>
+            </figure>
+            <para></para>
+        </listitem>
+        <listitem>母口（Female）：带针孔，被插入的那个
+            <para></para>
+            <figure xml:id="fg.rs232_9_pins_connector_female"><title>母口的9针的RS232接口</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/rs232_9_pins_connector_female.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/rs232_9_pins_connector_female.jpg" align="center" scalefit="1" width="80%" /></imageobject>
+                </mediaobject>
+            </figure>
+            <para></para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_interface_function"><title>RS232引脚接口的名称和功能</title>
+    <para>此处介绍，最常用的9针的RS232的引脚的具体位置和含义。</para>
+    <table xml:id="tbl.rs232_9_pin_function"><title>9针的RS232引脚的编号定义和功能</title>
+        <tgroup cols="4">
+            <colspec colnum="1" colname="col1" colwidth="1*"/>
+            <colspec colnum="2" colname="col2" colwidth="1*"/>
+            <colspec colnum="3" colname="col3" colwidth="1*"/>
+            <colspec colnum="4" colname="col4" colwidth="1*"/>
+
+            <thead>
+                <row><entry>RS232引脚编号</entry><entry>引脚名缩写</entry><entry>引脚名全称</entry><entry>信号传输方向</entry></row>
+            </thead>
+
+            <tbody>
+                <row><entry>1</entry><entry>DCD</entry><entry>Data Carrier Detect</entry><entry>&lt;—-</entry></row>
+                <row><entry>2</entry><entry>RXD</entry><entry>Receive Data</entry><entry>&lt;—-</entry></row>
+                <row><entry>3</entry><entry>TXD</entry><entry>Transmit Data</entry><entry>—-&gt;</entry></row>
+                <row><entry>4</entry><entry>DTR</entry><entry>Data Terminal Ready</entry><entry>—-&gt;</entry></row>
+                <row><entry>5</entry><entry>GND</entry><entry>System GRounD</entry><entry>—-</entry></row>
+                <row><entry>6</entry><entry>DSR</entry><entry>Data Set Ready</entry><entry>&lt;—-</entry></row>
+                <row><entry>7</entry><entry>RTS</entry><entry>Request to Send</entry><entry>—-&gt;</entry></row>
+                <row><entry>8</entry><entry>CTS</entry><entry>Clear to Send</entry><entry>&lt;—-</entry></row>
+                <row><entry>9</entry><entry>RI</entry><entry>Ring Indicator</entry><entry>&lt;—-</entry></row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para></para>
+    <para>对于公口的引脚的含义，图示如下：</para>
+    <figure xml:id="fg.rs232_9_pin_male_definition"><title>公口的9针的RS232接口定义</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/rs232_9_pin_male_definition.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/rs232_9_pin_male_definition.jpg" align="center" scalefit="1" width="20%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para>对于公口和母口对应的关系，此图一目了然：</para>
+    <para>各个引脚的名称，功能，传输方向，以及公口和母口的位置编号</para>
+    <figure xml:id="fg.rs232_9_pin_male_and_female_definition"><title>9针RS232接口的公口和母口的定义和对应关系</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/rs232_9_pin_male_and_female_definition.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/rs232_9_pin_male_and_female_definition.jpg" align="center" scalefit="1" width="100%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_pins_connection"><title>RS232引脚的接法</title>
+    <para>正常情况下，两个RS232接口，一个公口和母口，如前面的介绍，直接对应的插上互联就可以使用了</para>
+    <para>有时候，为了简化数据传输，仅仅使用最基本的引脚，即可实现数据传输了。</para>
+    <para>常见的有：</para>
+    <para>不考虑流控制（握手协议），直接数据线和接地，只用到：</para>
+    <itemizedlist>
+        <listitem>引脚3==TxD==发送数据</listitem>
+        <listitem>引脚2==RxD==接受数据</listitem>
+        <listitem>引脚5==GND==接地</listitem>
+    </itemizedlist>
+    <para>如图所示：</para>
+    <figure xml:id="fg.db_9_female_three_pin_connection"><title>9针母口RS232接口的三个引脚</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/db_9_female_three_pin_connection.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/db_9_female_three_pin_connection.jpg" align="center" scalefit="1" width="100%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para>所以这时候，只需要连接对应的3,2,5三个引脚即可</para>
+    <figure xml:id="fg.dce_dte_3_pin_connection"><title>RS232的DCE和DTE的3线连接方式</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/dce_dte_3_pin_connection.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/dce_dte_3_pin_connection.jpg" align="center" scalefit="1" width="100%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_flow_control"><title>RS232的流控制协议</title>
+    <para>TODO：整理</para>
+    <para><link xl:href="http://www.crifan.com/summary_rts_cts_vs_dtr_dsr/">【整理】RTS/CTS，DTR/DSR的区别</link></para>
+    <para><link xl:href="http://www.crifan.com/order_rs232_rts__cts_flow_control_of_the_specific_process__mechanism/">【整理】RS232 RTS/CTS的流控制的具体过程/机制</link></para>
+    <para><link xl:href="http://www.crifan.com/hart_handshake_rts_cts/">【整理】HART协议中串口配置和Handshake（RTS/CTS等）</link></para>
+    
+    <sect2 xml:id="rts_cts_vs_dtr_dsr"><title>RTS/CTS和DTR/DSR之间的对比</title>
+        <para>先列出关于流控制协议的一些名词：</para>
+        <itemizedlist>
+            <listitem>DTR – Data Terminal Ready</listitem>
+            <listitem>DSR – Data Set Ready</listitem>
+            <listitem>RTS – Request To Send</listitem>
+            <listitem>CTS – Clear To Send</listitem>
+        </itemizedlist>
+        <para>于此相关的其他一些名词：</para>
+        <itemizedlist>
+            <listitem>DCE：Data Communication Equipment，可以理解为：数据的发起方
+                <para>比如，计算机终端</para>
+                <para></para>
+            </listitem>
+            <listitem>DTE：Data Terminal Equipment，可以理解为：数据的接收方
+                <para>原先定义为，数据通信设备，比如调制解调器Modem</para>
+                <para></para>
+            </listitem>
+        </itemizedlist>
+        <para>RTS/CTS和DTR/DSR，用的物理引脚是不同的；</para>
+        <para>而关于DTR/DSR和RTS/CTS共存（没有统一只使用单个的一组硬件引脚（要么用RTS/CTS，要么用DTR/DSR）去实现流控制）的原因是：</para>
+        <para>背景是：</para>
+        <para>最开始先出现的RTS/CTS，但是设计出RTS/CTS的初衷，即原先的目的，就不是把RTS/CTS去用来当做流控制的</para>
+        <para>-&gt; 而是用来：去协调两个半双工（工作模式下的）的猫modem之间的通讯</para>
+        <para>-&gt; 不至于让两个半双工的modem，在通讯时，互相掐架，互相抢占数据通道，互相同时要么都要发送数据，要么都要接受数据，由此而容易导致混乱和（总线上的）数据异常</para>
+        <para>-&gt; 但是结果，（被设计用于协调两个两个半双工的modem之间的通讯的）RTS/CTS，结果被大家误用，误当做（后来大量出现和使用的，全双工的串口等设备中的）流控制</para>
+        <para>-&gt;  即，对于都是全双工的两个串口来说：</para>
+        <para>计算机（上面的串口） &lt;-&gt; （开发板或其他设备上面的）串口</para>
+        <para>分别对应着的概念是：</para>
+        <para>DCE &lt;-&gt; DTE</para>
+        <para>此处，分别叫做：</para>
+        <para>数据发送方 &lt;-&gt; 数据接收方</para>
+        <para>此处，暂且叫做：</para>
+        <para>串口A &lt;-&gt; 串口B</para>
+        <para>此时就是：</para>
+        <para>A打算发送数据到B中</para>
+        <para>A设置RTS（Request To Send），表示：请求发送（数据到对方）</para>
+        <para>此时：</para>
+        <itemizedlist>
+            <listitem>正常情况下，数据接收方，B不忙的时候，即不是busy的状态，则：
+                <itemizedlist>
+                    <listitem>B去设置对应的CTS（Clear To Send）：</listitem>
+                    <listitem>两种理解，不确定是哪种：
+                        <para>清除（发送者A之前的设置的RTS），表示可以接受数据了</para>
+                        <para>Clear表示OK，清楚，明白，意思是明白对方的意思了，表示对方可以发送数据了</para>
+                    </listitem>
+                    <listitem>-&gt; 发送者A，就可以直接去发送数据给B了，B也就可以去接受数据，处理收到的数据了；</listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>偶尔特殊的时候，处于忙的状态，即busy，比如忙着处理上次发送的数据呢，所以没空理会你这次还要发的数据：
+                <itemizedlist>
+                    <listitem>那么此时就是：不去设置对应的CTS，表示自己忙，来不及处理你将要发送的数据</listitem>
+                    <listitem>-&gt; 数据发送者A，见状，就继续检测CTS，直到（数据接受者B，忙清了自己手上的活，有空接受数据了，然后）CTS被接受者B去设置对应的CTS，表示可以接受数据了，然后A才去发送数据给B</listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+        <para></para>
+        <para>DTR/DSR，主要是用来做建立链接</para>
+        <para>即，数据发送和接受之前，先要建立A和B的连接，这时候才用到DTR/DSR</para>
+        <para></para>
+        <para></para>
+        <para>A设置RTS表示要发送数据给B，而B设置CTS表示可以接受数据，通知A发送数据给B，A就开始去真正的发送数据给B了</para>
+        <para>的背景是：</para>
+        <para>硬件连接是：</para>
+        <itemizedlist>
+            <listitem>A的RTS&lt;-&gt;B的RTS</listitem>
+            <listitem>A的CTS&lt;-&gt;B的CTS</listitem>
+        </itemizedlist>
+        <para>对应的：</para>
+        <itemizedlist>
+            <listitem>A一般是计算机PC</listitem>
+            <listitem>B一般是接在PC上的一个modem猫</listitem>
+        </itemizedlist>
+        <para>对应的，A要发送数据给B的执行过程是：</para>
+        <orderedlist>
+            <listitem>A设置A的RTS：表示要发数据给B；</listitem>
+            <listitem>A检测A的CTS：
+                <itemizedlist>
+                    <listitem>如果A的CTS是被设置了，那说明B设置了B的CTS
+                        <itemizedlist>
+                            <listitem>表示B可以接受数据了
+                                <itemizedlist>
+                                    <listitem>A就去发送数据给B了</listitem>
+                                </itemizedlist>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                    <listitem>如果A的CTS没被设置，那说明B没有去设置B的CTS
+                        <itemizedlist>
+                            <listitem>说明B还出于busy忙的状态
+                                <itemizedlist>
+                                    <listitem>等B忙清了，再去设置B的CTS
+                                        <itemizedlist>
+                                            <listitem>此时A才能检测到A的CTS，是被设置了，才能发送数据给B</listitem>
+                                        </itemizedlist>
+                                    </listitem>
+                                </itemizedlist>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+        </orderedlist>
+        <para></para>
+        <para>对于目前常见的，直接两个DB9的串口直接相连，物理上对应的引脚的接法：</para>
+        <itemizedlist>
+            <listitem>A的RTS，CTS，分别接B的RTS，CTS</listitem>
+            <listitem>A的Tx，Rx，分别接B的Rx和Tx</listitem>
+        </itemizedlist>
+        <para></para>
+        <para>目前对于DTR/DSR的理解：</para>
+        <para>数据发送和接受之前，先要建立A和B的连接。这时候才用到，用于建立链接的，DTR/DSR</para>
+        <para></para>
+        <para>RTS/CTS的流控制过程如下：</para>
+        <para>如果A和B，（其中A是Imager，要发送图像数据，B是对应的接受设备），A想要发送数据给B，那么用硬件的RTS/CTS作为硬件流控制机制的话，</para>
+        <para>A如果想要发送数据给B的话，A会使得RTS(Request To Send)引脚有效，表明其想要“请求发送”数据给作为接收设备的B，</para>
+        <para>然后A接着就会去检测对应的来自B的CTS引脚，直到CTS有效（此时意味着B已经做 好了相关的准备工作了，然后设置了CTS(Clear To Send) ，表明自己准备好接受数据了)，才会真正开始发送数据。</para>
+        <para>并且在接下来发送每个字符（data character）之前，都会去检测对应的CTS是否有效</para>
+        <para>如果有效，才会继续传输对应的数据，</para>
+        <para>如果发现CTS无效（此时意味着B那么发生了啥情况，导 致无法继续正常接受数据了，所以将CTS设置为了无效），那么就不能再继续发送数据。</para>
+        <para>对于上述CTS一直有效的情况下，A就一直发送数据给B，到了最后数据发送完之后，再把RTS设置为无效，表示数据已经发送完了。</para>
+        <para>这就是整个单个的数据发送流程，用RTS和CTS来控制传输的逻辑。</para>
+        <para></para>
+        <para>对此流程，做个简单的比喻，未必很恰当，但是可以很形象的说明数据发送的流程：</para>
+        <para>A和B，相当于马路的两边，A要发送数据给B，就相当于A要过马路，具体的流程就是：</para>
+        <orderedlist>
+            <listitem>A说，我要过马路
+                <para>就相当于A要将CTS设置有效，表示要发送数据（过马路到B那里去）</para>
+                <para></para>
+            </listitem>
+            <listitem>B根据自己情况，决定亮红灯不允许过，还是亮绿灯允许过（CTS有效）
+                <para>B对于接下来将要接受的数据，要有一个准备的过程，这要花点时间，在这段时间内，肯定不会让你发送数据</para>
+                <para>也就是亮红灯不允许你过马路，将CTS设置无效，表示我还没准备好</para>
+                <para>然后A那边呢就一直检测CTS是否有效，发现是无效，就知道现在B那边还没准备好，不允许我发送数据</para>
+                <para>然后过了会B准备好了， 就把CTS设置为有效，表示准备好了，A可以发送数据给B了，即亮绿灯，让A过马路了</para>
+                <para>而A此时就检测到CTS是有效的了，就可以发送数据了，即看到绿灯，可以过马路了。</para>
+            </listitem>
+            <listitem>A要发送给B的每一个字节数据之前，都会看看是否是绿灯，如果是，继续发送数据，如果不是，就停止发送
+                <para>接下来的，A要把一个个字节的数据（就相当于一个个要过马路的人），发送给B</para>
+                <para>在发送之前都要像前面一样，去检测CTS是否有效</para>
+                <para>如果有效，就亮绿灯，可以继续发送数据，即过马路</para>
+                <para>如果CTS无效，说明B出啥问题了，比如缓存满了，要处理一下，接着再让你发送数据，就亮红灯，A不能继续过马路了。</para>
+                <para>然后A就一直检测CTS直到CTS有效，再发送数据，即A一直看灯，直到红灯变绿，再继续过马路。</para>
+                <para></para>
+            </listitem>
+            <listitem>在CTS一直有效的情况下，A发送数据完成后，把RTS设置为无效
+                <para>所有的A都过完马路了，就把原先设置的标示RTS设置为无效，表示数据发送完成了。</para>
+                <para></para>
+            </listitem>
+        </orderedlist>
+        <para></para>
+        <para>可以将上面一大堆繁琐的解释，总结为简单的逻辑：</para>
+        <orderedlist>
+            <listitem>A先设置RTS为1，表示要发数据给B</listitem>
+            <listitem>B检测到了RTS为1，就看看自己是否已经准备好：
+                <listitem>如果准备好，就设置CTS为1表示A可以发送数据给我B了；</listitem>
+                <listitem>如果没有准备好，那就继续处理需要处理的事情，比如缓存满了，尽快去搬移数据。弄完了，再去设置CTS为1，让A发送数据过来。</listitem>
+            </listitem>
+            <listitem>A发现CTS为1了，就开发发送数据给B。</listitem>
+            <listitem>A每发送一次数据给B之前，都继续上面的逻辑，就是先检测CTS是否为1，如果不是1，继续等待，如果是1，就发送数据。</listitem>
+            <listitem>A把所有数据都发送完毕了，就去设置为RTS为0，表示数据发送完了。B也就不会再去准备接受数据了。</listitem>
+        </orderedlist>
+        <para></para>
+        <para></para>
+        <para></para>
+    </sect2>
+</sect1>
+
+<sect1 xml:id="rs232_time_sequence"><title>RS232时序图</title>
+    <figure xml:id="fg.rs232_bit_time_sequence_diagram"><title>RS232的时序图</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/rs232_bit_time_sequence_diagram.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/rs232_bit_time_sequence_diagram.png" align="center" scalefit="1" width="100%" /></imageobject>
+        </mediaobject>
+    </figure>
+</sect1>
+
+<para>RS-232 - A standard defining the signals between two devices, defining the signal names, their purpose, voltage levels, connectors and pinouts.
+This is a specific interface standard that allows for equipment interoperability. While two pieces of hardware may have UARTs, you don't know that they'll connect without damage, or communicate properly unless you know they have the same pinout and voltage standards, or include a converter or specially wired cable specific to the interconnection of these two specificl devices. To avoid the need for special converters or cables, the manufacturers may choose to follow the RS-232 standard. You know, then, that a standard RS-232 cable will connect the two.
+However, neither the UART, nor the RS-232 standard define what is sent on the TX and RX lines. Generally, when people use RS-232, they use a simple 8 bit NRZ encoding with one start bit and one stop bit. Most equipment today manufactured uses this encoding, but there's no requirement to do so. You can find older equipment that includes parity bits, or uses 7 or 9 bits. The UART can be configured to support these various protocols on its TX and RX lines.
+UARTs do not typically interface directly with RS-232. You will need to convert the output of the UART to the +/-12V standard that RS-232 requires. A complete RS-232 interface will typically involve both a UART and an RS-232 level converter. Further, the RS-232 standard includes the definition of several other signalling pins besides TX and RX, which you may need to use depending on the equipment you need to connect to. These will also need to be level converted, and your UART may, or may not, support these signals. If it does not you will have to control them with your software/firmware directly.
+So while a UART may help you implement an RS-232 interface, it is not an RS-232 interface itself.</para>
+<para></para>
+<para></para>
+<para></para>
+
+</chapter>

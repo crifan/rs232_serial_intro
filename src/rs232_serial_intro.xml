@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE book
+[
+
+<!ENTITY cur_book_name      "rs232_serial_intro" >
+<!ENTITY publish_date       "2015-05-22" >
+<!ENTITY release_version    "1.0" >
+
+<!ENTITY copyrith_year "2015" >
+<!ENTITY entity_common_multi_format     SYSTEM  "../../entity_common_multi_format.xml">
+<!ENTITY entity_common_publish_info     SYSTEM  "../../entity_common_publish_info.xml">
+]>
+
+<book version="5.0"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    
+    xml:lang="zh_CN"
+    >
+
+<info>
+    <title>RS232串口协议详解</title>
+    <subtitle></subtitle>
+    <keywordset>
+        <keyword>RS232</keyword>
+        <keyword>串口</keyword>
+        <keyword>UART</keyword>
+        <keyword>协议</keyword>
+        <keyword>详解</keyword>
+    </keywordset>
+
+    <abstract>
+        <para>本文主要介绍了RS232串口的基本知识，以及和其他众多技术的对比，包括TTL，UART，RS422，RS485等，介绍了如何进行RS232串口的开发，RS232串口在不同领域内的应用，其他不同技术和手段如何模拟串口，相关的串口工具和软件，以及常见的串口芯片。</para>
+        &entity_common_multi_format;
+    </abstract>
+
+    <revhistory>
+        <revision>
+            <revnumber>&release_version;</revnumber>
+            <date>&publish_date;</date>
+            <revremark>
+                <orderedlist>
+                    <listitem>添加RS232串口的内容框架</listitem>
+                    <listitem>添加UART方面的解释</listitem>
+                </orderedlist>
+            </revremark>
+            <authorinitials>crl</authorinitials>
+        </revision>
+    </revhistory>
+
+    &entity_common_publish_info;
+</info>
+
+<xi:include href="preface.xml"/>
+<xi:include href="ch01_intro.xml"/>
+<xi:include href="ch02_other_compare.xml"/>
+<xi:include href="ch03_dev.xml"/>
+<xi:include href="ch04_application.xml"/>
+<xi:include href="ch05_emulation.xml"/>
+<xi:include href="ch06_soft_tool.xml"/>
+<xi:include href="ch07_chips.xml"/>
+<xi:include href="reference.xml"/>
+
+</book>

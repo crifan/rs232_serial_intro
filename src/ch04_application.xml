@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+	
+	xml:id="ch04_application">
+<title>RS232的实际应用</title>
+<abstract></abstract>
+
+<sect1 xml:id="rs232_in_plc"><title>RS232在PLC领域中的应用</title>
+    <para>PLC中，外（部挂）接其他设备支持各种接口，其中就包括最常用的RS232串口。</para>
+    <para>比如，IndraLogic的PLC组态期间，除了常见的其他总线，比如Profibus，CAN等等，还可以设置RS232的支持。</para>
+    <para>其他现场总线方面的产品，比如还有，串口RS232模块KL6001，以及RS232串口的Beckhoff的CX9000-N030：</para>
+    <figure xml:id="fg.beckhoff_cx9000_n030_rs232"><title>RS232串口接口的倍福BeckHoff的CX9000-N030</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/beckhoff_cx9000_n030_rs232.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/beckhoff_cx9000_n030_rs232.jpg" align="center" scalefit="1" width="20%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para>另外，比如Beckhoff倍福的很多工控模块和协议中，也有RS232的支持。比如TwinCAT系统中就有对于RS232的支持：</para>
+    <figure xml:id="fg.beckhoff_twincat_support_rs232"><title>Beckhoff的TwinCAT的RS232子系统</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/beckhoff_twincat_support_rs232.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/beckhoff_twincat_support_rs232.png" align="center" scalefit="1" width="20%" /></imageobject>
+        </mediaobject>
+    </figure>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="rs232_in_emb_dev"><title>RS232在嵌入式开发调试手段中的应用</title>
+	<para>RS232，作为嵌入式开发和调试的工具和手段，是使用最为普遍的。</para>
+	<para>即，嵌入式开发中的固件烧录方式，除了通过其他手段，比如SD、USB等方式进行烧录之外，还可以通过RS232去将程序通过串口下载到目标开发板（中的RAM中）。</para>
+</sect1>
+
+<sect1 xml:id="rs232_in_scanner"><title>RS232在条码扫描枪的应用</title>
+	<para></para>
+	<para></para>
+</sect1>
+
+<sect1 xml:id="rs232_in_opensource_hw"><title>RS232应用之：开源硬件</title>
+	<para>TODO：<link xl:href="http://www.crifan.com/continue_try_access_pcduino_via_ttl_serial_port/">【记录】继续尝试通过TTL串口去访问pcDuino</link></para>
+	<para></para>
+</sect1>
+
+</chapter>

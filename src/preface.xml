@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE preface>
+<preface
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns="http://docbook.org/ns/docbook"
+
+	xml:id="preface">
+    
+<title>正文之前</title>
+
+<sect1 xml:id="purpose"><title>此文目的</title>
+    <para>讲解RS232规范，协议，接口，相关的技术。</para>
+</sect1>
+
+<sect1 xml:id="declaration"><title>声明</title>
+    <para>由于本人知识水平有限，错误在所难免，欢迎指正。</para>
+    <para>此文欢迎拷贝传播，但是所有权本人独有，未经许可，严谨用于其他商业等用途。</para>
+    <para>更多建议，意见，吐槽，都可以联系偶：admin (at) crifan.com </para>
+</sect1>
+
+</preface>

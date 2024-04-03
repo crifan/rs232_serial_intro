@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+	
+	xml:id="ch05_emulation">
+<title>RS232串口的模拟</title>
+<abstract></abstract>
+
+<para>由于RS232串口的应用极其广泛，所以在很多其他技术领域内，往往也是为了兼容已有的RS232串口通信，而去用其他技术或手段去模拟出RS232串口。</para>
+<para>下面就来总结一下，有哪些模拟RS232串口的技术和手段：</para>
+
+<sect1 xml:id="usb_emulate_rs232"><title>USB模拟串口</title>
+	<para>USB官网协议中就支持模拟RS232串口。</para>
+	<para>TODO：</para>
+	<para><link xl:href="http://www.crifan.com/android_phone_usb_to_com_rs232/">【整理】Android的USB转串口相关资料 </link></para>
+</sect1>
+
+<sect1 xml:id="bluetooth_emulate_rs232"><title>蓝牙模拟串口</title>
+    <para>蓝牙的协议里面，就用专门的RFCOMM去模拟出（9针的）串口：</para>
+    <para>其协议对应关系是：</para>
+    <table xml:id="tbl.protocol_serial_vs_bluetooth"><title>蓝牙模拟串口与和标准串口的对应关系</title>
+        <tgroup cols="3">
+            <colspec colnum="1" colname="col1" colwidth="1*"/>
+            <colspec colnum="2" colname="col2" colwidth="1*"/>
+            <colspec colnum="3" colname="col3" colwidth="1*"/>
+
+            <thead>
+                <row><entry>对应协议</entry><entry>9针串口</entry><entry>数据收发</entry></row>
+            </thead>
+
+            <tbody>
+                <row><entry>标准串口</entry><entry>RS232</entry><entry>UART</entry></row>
+                <row><entry>蓝牙模拟串口</entry><entry>RFCOMM</entry><entry>L2CAP</entry></row>
+            </tbody>
+        </tgroup>
+    </table>
+	<para></para>
+	<para></para>
+	<para></para>
+	<para>蓝牙官网也支持模拟RS232串口，对应的profile协议是RFCOMM。</para>
+	<para>详见：<link xl:href="http://www.crifan.com/files/doc/docbook/bluetooth_intro/release/html/bluetooth_intro.html">蓝牙协议详解</link></para>
+</sect1>
+
+</chapter>

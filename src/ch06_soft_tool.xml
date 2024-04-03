@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+
+    xml:id="ch06_soft_tool">
+<title>RS232串口方面的软件和工具</title>
+<abstract></abstract>
+
+<para>此处整理和RS232串口方面的各种软件和工具：</para>
+<para>TODO：</para>
+<para><link xl:href="http://www.crifan.com/order_commonly_used_tool_for_serial_port_profile/">【整理】常用的串口工具简介 | 在路上</link></para>
+
+<sect1 xml:id="rs232_putty"><title>PuTTY</title>
+	<para>PuTTY支持RS232</para>
+	<para>TODO：整理帖子 <link xl:href="http://www.crifan.com/order_under_windows_hyperterminal_best_alternative_free_serial_terminal_tool_putty/">【整理】Windows下超级终端的最佳替代品，免费的串口终端工具Putty | 在路上</link></para>
+	<para></para>
+</sect1>
+
+<sect1 xml:id="rs232_hyper_terminal"><title>RS232工具之Windows的超级终端</title>
+	<para>Windows系统，比如WinXP，默认已自带串口工具：超级终端。</para>
+	<para>而Win7中，不自带了，需要自己额外下载：</para>
+	<para>TODO：整理帖子 <link xl:href="http://www.crifan.com/order_how_to_install_in_win7_using_hyperterminal_hyper_terminal/">【整理】RS232 RTS/CTS的流控制的具体过程/机制 | 在路上</link></para>
+	<para></para>
+</sect1>
+
+<sect1 xml:id="rs232_securecrt"><title>RS232工具之SecureCRT</title>
+	<para>SecureCRT是个很好用的工具，其中支持RS232串口。</para>
+	<para>TODO：整理帖子 <link xl:href="http://www.crifan.com/crifan_recommand_development_serial_tool_securecrt/">【crifan推荐】极佳的串口开发工具：SecureCRT | 在路上</link></para>
+	<para></para>
+</sect1>
+
+</chapter>
